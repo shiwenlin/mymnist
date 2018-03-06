@@ -127,7 +127,7 @@ def numbers_to_letter(argument):
         6: "G",
         7: "H",
         8: "I",
-        9: "G",
+        9: "J",
         10: "K",
         11: "L",
         12: "M",
