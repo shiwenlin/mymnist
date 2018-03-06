@@ -5,10 +5,8 @@ from PIL import Image, ImageFilter
 
 
 def predictint(imvalue):
-    """
-    This function returns the predicted integer.
-    The imput is the pixel values from the imageprepare() function.
-    """
+
+
 
     # Define the model (same as when creating the model file)
     x = tf.placeholder(tf.float32, [None, 784])
@@ -118,13 +116,48 @@ def imageprepare(argv):
     return tva
 
 
+def numbers_to_letter(argument):
+    switcher = {
+        0: "A",
+        1: "B",
+        2: "C",
+        3: "D",
+        4: "E",
+        5: "F",
+        6: "G",
+        7: "H",
+        8: "I",
+        9: "G",
+        10: "K",
+        11: "L",
+        12: "N",
+        13: "M",
+        14: "O",
+        15: "P",
+        16: "Q",
+        17: "R",
+        18: "S",
+        19: "T",
+        20: "U",
+        21: "V",
+        22: "W",
+        23: "X",
+        24: "Y",
+        25: "Z",
+
+
+    }
+    return switcher.get(argument, "nothing")
+
+
 def main(argv):
     """
     Main function.
     """
     imvalue = imageprepare(argv)
     predint = predictint(imvalue)
-    print (predint[0])  # first value in list
+
+    print (numbers_to_letter(predint[0]))  # first value in list
 
 
 if __name__ == "__main__":
